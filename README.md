@@ -13,9 +13,13 @@ This project implements a real-time ASL alphabet recognition system using Tensor
 ### 🚀 Features
 
 ✔️ Real-time ASL letter prediction from webcam
+
 ✔️ Transfer learning with pretrained MobileNetV2
+
 ✔️ Data augmentation for better generalization
+
 ✔️ Test accuracy: 96.10%
+
 ✔️ Clean and simple Python scripts for training and inference
 
 ---

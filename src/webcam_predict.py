@@ -29,7 +29,7 @@ if not cap.isOpened():
     print("❌ Could not open webcam")
     exit()
 
-print("✅ Webcam started. Press 'q' to quit.")
+print("Webcam started!. Press ctrl + c to quit.")
 
 while True:
     ret, frame = cap.read()

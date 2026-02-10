@@ -26,16 +26,16 @@ This project implements a real-time ASL alphabet recognition system using Tensor
 
 ### 🧠 How It Works
 
-Data Preparation:
+✔️ Data Preparation:
 Images are loaded from directory structure and augmented (rescaling, rotation, shifts, zoom, flip).
 
-Model Architecture:
+✔️ Model Architecture:
 MobileNetV2 (pretrained on ImageNet) is used as backbone with a custom classification head that predicts ASL letters.
 
-Training:
+✔️ Training:
 The model is trained with early stopping and learning rate adjustments for improved validation performance.
 
-Inference:
+✔️ Inference:
 A webcam feed is captured, a region of interest (ROI) is cropped and preprocessed, and the model predicts the sign in real time.
 
 ---

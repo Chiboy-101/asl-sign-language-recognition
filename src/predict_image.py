@@ -1,12 +1,13 @@
 import cv2
 import numpy as np
+import tensorflow as tf
 from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator  # type: ignore
 
 # Load the trained model
-model = load_model("models/asl_mobilenet_model.h5")
+model = tf.keras.models.load_model("models/asl_mobilenet_model.keras")
 
-IMG_SIZE = 64
+IMG_SIZE = 160
 BATCH_SIZE = 32
 
 # Create a data generator

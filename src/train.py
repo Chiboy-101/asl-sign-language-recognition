@@ -1,7 +1,7 @@
 # Load the necessary modules and libraries
 import tensorflow as tf
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.preprocessing.image import ImageDataGenerator  # type: ignore
+from tensorflow.keras.applications import MobileNetV2  # type: ignore
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 from tensorflow.keras.models import Model
 import cv2
@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.callbacks import EarlyStopping
 
 # Define constants
-IMG_SIZE = 64
+IMG_SIZE = 160
 BATCH_SIZE = 32
 
 # Pre-process the data and create training and validation datasets
@@ -67,7 +67,6 @@ x = Dense(256, activation="relu")(x)
 output = Dense(train_data.num_classes, activation="softmax")(x)
 
 model = Model(inputs=base_model.input, outputs=output)
-
 # Compile the model
 model.compile(
     optimizer=tf.keras.optimizers.Adam(1e-4),
@@ -82,7 +81,7 @@ early_stop = EarlyStopping(monitor="val_loss", patience=3, restore_best_weights=
 
 # Train the model
 history = model.fit(
-    train_data, validation_data=val_data, epochs=10, callbacks=[early_stop]
+    train_data, validation_data=val_data, epochs=20, callbacks=[early_stop]
 )
 
 # Visualize training history
@@ -111,4 +110,4 @@ print(f"Validation Accuracy: {accuracy * 100:.2f}%")
 
 
 # Save the trained model
-model.save("asl_mobilenet_model.h5")
+model.save("asl_mobilenet_model.keras")
